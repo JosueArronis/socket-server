@@ -25,7 +25,7 @@ export default class server {
         this.io.on('connection', client => {
             console.log('New client connected');
             // Messages
-            socket.menssage(client);
+            socket.menssage(client, this.io);
 
             // Disconnect Client Socket
             socket.disconnect(client);
