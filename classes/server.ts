@@ -26,15 +26,18 @@ export default class Server {
             // console.log('New client connected');
 
             // Connect Client
-            socket.connectClient(client);
+            socket.connectClient(client, this.io);
             //Configure User
             socket.userConfigure(client, this.io);
 
             // Messages
             socket.menssage(client, this.io);
 
+            //Get Users
+            socket.getUsers(client, this.io);
+
             // Disconnect Client Socket
-            socket.disconnect(client);
+            socket.disconnect(client, this.io);
         });
     }
     start (callback: Function ) {

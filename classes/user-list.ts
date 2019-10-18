@@ -29,7 +29,7 @@ export class UserList {
 
     // GET USER LIST
     public getList() {
-        return this.list;
+        return this.list.filter(user => user.name != 'No-Login-yet');
     }
 
     // GET USER
